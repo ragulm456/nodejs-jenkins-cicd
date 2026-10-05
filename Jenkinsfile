@@ -7,6 +7,13 @@ pipeline {
 
     stages {
 
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/ragulm456/nodejs-jenkins-cicd.git'
+            }
+        }
+
         stage('Build') {
             steps {
                 echo 'Building Node.js application...'
